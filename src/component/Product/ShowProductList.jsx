@@ -23,6 +23,8 @@ const ShowProductList = () => {
             });
     }, []);
 
+    console.log(URL)
+
     const onChange = (value) => {
         setValue(value);
         let searchProduct = products.filter(entry => {

@@ -15,11 +15,13 @@ const ShowProductList = () => {
     const headers = { 'Authorization': `Bearer ${token}` }
 
     useEffect(() => {
-        axios.get(`${URL}`, headers)
+        axios.get(`${URL}`, {
+            headers: headers
+        })
             .then((res) => {
                 setProducts(res.data);
                 setFilteredProducts(res.data);
-                console.log(res)  // Initialize filteredProducts with all products
+                console.log(res, headers)  // Initialize filteredProducts with all products
             })
             .catch(err => {
                 console.log("Error in products");

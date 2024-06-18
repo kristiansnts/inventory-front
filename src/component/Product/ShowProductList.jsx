@@ -21,7 +21,7 @@ const ShowProductList = () => {
             .then((res) => {
                 setProducts(res.data);
                 setFilteredProducts(res.data);
-                console.log(res, headers)  // Initialize filteredProducts with all products
+                console.log(res, headers, URL)  // Initialize filteredProducts with all products
             })
             .catch(err => {
                 console.log("Error in products");

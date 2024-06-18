@@ -17,8 +17,7 @@ const ShowProductList = () => {
         axios.get(`${URL}`)
             .then((res) => {
                 setProducts(res.data);
-                setFilteredProducts(res.data);
-                console.log(res)  // Initialize filteredProducts with all products
+                setFilteredProducts(res.data); // Initialize filteredProducts with all products
             })
             .catch(err => {
                 console.log("Error in products")})
@@ -31,6 +30,9 @@ const ShowProductList = () => {
         });
         setFilteredProducts(searchProduct);
     };
+
+    console.log(`Product: ${products}`)
+    console.log(`filter: ${filteredProducts}`)
 
     return (
         <Layout>

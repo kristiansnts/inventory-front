@@ -11,9 +11,11 @@ const ShowProductList = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [value, setValue] = useState('');
     const URL = import.meta.env.VITE_URL;
+    const token = import.meta.env.VITE_VERCEL_TOKEN
+    const headers = { 'Authorization': `Bearer ${token}` }
 
     useEffect(() => {
-        axios.get(`${URL}`)
+        axios.get(`${URL}`, headers)
             .then((res) => {
                 setProducts(res.data);
                 setFilteredProducts(res.data);

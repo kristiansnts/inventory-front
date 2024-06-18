@@ -13,15 +13,15 @@ const ShowProductList = () => {
     const URL = import.meta.env.VITE_URL;
     const token = import.meta.env.VITE_VERCEL_TOKEN;
 
-    useEffect(() => {
-        axios.get(`${URL}`)
-            .then((res) => {
-                setProducts(res.data);
-                setFilteredProducts(res.data); // Initialize filteredProducts with all products
-            })
-            .catch(err => {
-                console.log("Error in products")})
-    }, []);
+    // useEffect(() => {
+    //     axios.get(`${URL}`)
+    //         .then((res) => {
+    //             setProducts(res.data);
+    //             setFilteredProducts(res.data); // Initialize filteredProducts with all products
+    //         })
+    //         .catch(err => {
+    //             console.log("Error in products")})
+    // }, []);
 
     const onChange = (value) => {
         setValue(value);

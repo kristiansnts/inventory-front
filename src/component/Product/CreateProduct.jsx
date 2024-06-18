@@ -16,6 +16,7 @@ const CreateProduct = (props) => {
     const [preview, setPreview] = useState(null);
     const [error, setError] = useState(null);
     const image = watch('imageUrl');
+    const URL = import.meta.env.VITE_URL;
 
     const navigate = useNavigate();
 
@@ -27,7 +28,7 @@ const CreateProduct = (props) => {
         formData.append('price', data.price);
 
         try {
-            await axios.post('http://localhost:3000/api/products', formData, {
+            await axios.post(`${URL}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },

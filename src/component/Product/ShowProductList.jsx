@@ -16,7 +16,8 @@ const ShowProductList = () => {
         axios.get(`${URL}`)
             .then((res) => {
                 setProducts(res.data);
-                setFilteredProducts(res.data);  // Initialize filteredProducts with all products
+                setFilteredProducts(res.data);
+                console.log(res)  // Initialize filteredProducts with all products
             })
             .catch(err => {
                 console.log("Error in products");
@@ -51,7 +52,7 @@ const ShowProductList = () => {
                             <a href="/create-product" className="btn btn-primary">Add Product</a>
                         </div>
                         <hr className="mt-2" />
-                        {filteredProducts.map((product, k) => (
+                        {filteredProducts? filteredProducts.map((product, k) => (
                             <div className="col-12 col-md-4" key={k}>
                                 <ProductCard
                                     productName={product.productName}
@@ -61,7 +62,7 @@ const ShowProductList = () => {
                                     image={product.imageUrl}
                                 />
                             </div>
-                        ))}
+                        )) : <div>Product not found</div>}
                     </div>
                 </div>
             </div>

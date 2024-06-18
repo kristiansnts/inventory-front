@@ -42,7 +42,7 @@ const ShowProductDetails = () => {
     const onDelete = () => {
         const con = confirm("Are you sure to delete this product?")
         if(con) {
-            axios.delete(`${URL}/${id}`)
+            axios.delete(`https://inventory-system-orpin.vercel.app/api/products/${id}`)
             .then((res) => {
                 navigate('/')
             })

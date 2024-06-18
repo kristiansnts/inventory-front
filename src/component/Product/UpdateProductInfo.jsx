@@ -9,7 +9,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 const UpdateProductInfo = () => {
     const [product, setProduct] = useState(null)
     const { id } = useParams()
-    const URL = `https://inventory-system-orpin.vercel.app/api/products/`;
     const {
         register,
         handleSubmit,
@@ -31,7 +30,7 @@ const UpdateProductInfo = () => {
         formData.append('price', data.price);
 
         try {
-            await axios.put(`${URL}/${id}`, formData, {
+            await axios.put(`https://inventory-system-orpin.vercel.app/api/products/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },

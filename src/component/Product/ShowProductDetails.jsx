@@ -16,7 +16,7 @@ const ShowProductDetails = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get(`${URL}/${id}`)
+        axios.get(`https://inventory-system-orpin.vercel.app/api/products/${id}`)
             .then((res) => {
                 setProduct(res.data);
                 setLoading(false);

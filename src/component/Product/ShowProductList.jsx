@@ -31,8 +31,8 @@ const ShowProductList = () => {
         setFilteredProducts(searchProduct);
     };
 
-    console.log(`Product: ${products}`)
-    console.log(`filter: ${filteredProducts}`)
+    console.log(products)
+    console.log(filteredProducts)
 
     return (
         <Layout>

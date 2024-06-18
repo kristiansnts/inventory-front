@@ -14,15 +14,13 @@ const ShowProductList = () => {
     const token = import.meta.env.VITE_VERCEL_TOKEN;
 
     useEffect(async () => {
-        try {
-            const product = await axios.get(URL)
-            if(product) {
-                setProducts(product.data);
-                setFilteredProducts(product.data);
-            }
-        } catch (error) {
-            console.log(error)
-        }
+        axios.get(`${URL}`).then(res => {
+            setProducts(res.data)
+            setFilteredProducts(res.data)
+            console.log(res)
+        }).catch(err => {
+            console.log("Error in Products")
+        })
     }, []);
 
     const onChange = (value) => {

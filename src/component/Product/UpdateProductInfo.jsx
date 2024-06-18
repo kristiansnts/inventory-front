@@ -9,7 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const UpdateProductInfo = () => {
     const [product, setProduct] = useState(null)
     const { id } = useParams()
-    const URL = import.meta.env.VITE_URL;
+    const URL = `https://inventory-system-orpin.vercel.app/api/products/`;
     const {
         register,
         handleSubmit,

@@ -31,6 +31,8 @@ const ShowProductList = () => {
         setFilteredProducts(searchProduct);
     };
 
+    console.log(URL)
+
     return (
         <Layout>
             <div className="container">

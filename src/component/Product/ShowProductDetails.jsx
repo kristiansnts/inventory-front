@@ -11,7 +11,7 @@ const ShowProductDetails = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { id } = useParams();
-    const URL = import.meta.env.VITE_URL;
+    const URL = `https://inventory-system-orpin.vercel.app/api/products/`;
     const key = import.meta.env.VITE_PHOTOSTOCK_API;
     const navigate = useNavigate()
 

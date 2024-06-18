@@ -54,7 +54,7 @@ const ShowProductList = () => {
                             <a href="/create-product" className="btn btn-primary">Add Product</a>
                         </div>
                         <hr className="mt-2" />
-                        {/* {filteredProducts.length > 0 ? filteredProducts.map((product, k) => (
+                        {filteredProducts.length > 0 ? filteredProducts.map((product, k) => (
                             <div className="col-12 col-md-4" key={k}>
                                 <ProductCard
                                     productName={product.productName}
@@ -64,7 +64,7 @@ const ShowProductList = () => {
                                     image={product.imageUrl}
                                 />
                             </div>
-                        )) : <div>Product not found</div>} */}
+                        )) : <div>Product not found</div>}
                     </div>
                 </div>
             </div>

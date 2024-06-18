@@ -14,9 +14,8 @@ const ShowProductList = () => {
     const token = import.meta.env.VITE_VERCEL_TOKEN;
 
     useEffect(async () => {
-        const headers = { 'Authorization': `Bearer ${token}` };
         try {
-            const product = await axios.get(URL, { headers })
+            const product = await axios.get(URL)
             if(product) {
                 setProducts(product.data);
                 setFilteredProducts(product.data);

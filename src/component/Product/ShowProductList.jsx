@@ -11,24 +11,23 @@ const ShowProductList = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [value, setValue] = useState('');
     const URL = import.meta.env.VITE_URL;
-    const token = import.meta.env.VITE_VERCEL_TOKEN
-    const headers = { 'Authorization': `Bearer c5oYhBNiR8uohH0aRCLKmYaT` }
+    const token = import.meta.env.VITE_VERCEL_TOKEN;
 
     useEffect(() => {
-        axios.get(`${URL}`, {
-            headers
-        })
+        const headers = { 'Authorization': `Bearer ${token}` };
+
+        axios.get(URL, { headers })
             .then((res) => {
                 setProducts(res.data);
-                setFilteredProducts(res.data);
-                console.log(res)  // Initialize filteredProducts with all products
+                setFilteredProducts(res.data); // Initialize filteredProducts with all products
+                console.log(res);
             })
             .catch(err => {
-                console.log("Error in products");
+                console.log("Error in fetching products", err);
             });
     }, []);
 
-    console.log(URL, token)
+    console.log(URL, token);
 
     const onChange = (value) => {
         setValue(value);
@@ -53,12 +52,12 @@ const ShowProductList = () => {
                         </div>
                     </div>
                     <div className="row mt-4">
-                        <div className="d-inline-flex justify-content-between ">
+                        <div className="d-inline-flex justify-content-between">
                             <span className="h3">Product List</span>
                             <a href="/create-product" className="btn btn-primary">Add Product</a>
                         </div>
                         <hr className="mt-2" />
-                        {filteredProducts? filteredProducts.map((product, k) => (
+                        {filteredProducts.length > 0 ? filteredProducts.map((product, k) => (
                             <div className="col-12 col-md-4" key={k}>
                                 <ProductCard
                                     productName={product.productName}
